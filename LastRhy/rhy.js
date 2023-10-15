@@ -437,7 +437,7 @@ class Note {
 //==================================================
 
 let scon = document.getElementById("container");
-let ctx;
+let ctx = "";
 let music = document.getElementById("music");
 let don = document.getElementById("don");
 let tan = document.getElementById("tan");
@@ -477,8 +477,6 @@ function init() {
 
     //コンパイル
     sheet = Myfunc.translateTosheet(sheet1,sheet2,sheet3,bpm);
-
-    setTimeout(function() {start()},8000);
 }
 
 function tick() {
