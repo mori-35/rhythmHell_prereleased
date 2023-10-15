@@ -516,4 +516,10 @@ function mykeydown(e) {
     } 
 }
 
+function test() {
+    document.body.requestFullscreen();
+    window.ontouchstart = function(e) {
+        document.getElementById("result1").textContent = e.touches[0].pageX + "," + e.touches[0].pageY;
+    }
+}
 let x = "1234567";
