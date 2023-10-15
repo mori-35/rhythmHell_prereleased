@@ -209,7 +209,7 @@ class Administrator {
             e.preventDefault(); //PC側の応答を停止
             XL = [130,260]; //左側の中心軸
             XR = [570,260]; //右側の中心軸
-            R = 150; //半径  
+            R = 200; //半径  
             judgeRange = [[-10,-5],[-5,-3],[-3,-1],[-1,1],[1,3] ,[3,5] ,[5,10]];
             judgeResult = ["SAD"  ,"SAFE" ,"FINE" ,"COOL","FINE","SAFE","SAD"];
             
@@ -502,7 +502,7 @@ function tick() {
 
 function start() {
     let music = document.getElementById("music");
-    music.volume = 1.0;
+    music.play();
     setTimeout(function(){music.currentTime = 0;},delay);
     setInterval(tick,20);
 }
