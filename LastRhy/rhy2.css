@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+}
+
+#music {
+    position:absolute;
+    left:0px;
+    top:0px;
+    margin-left: 30px;
+    width:640px;
+    height:360px;
+}
+
+#resultContainer {
+    position:absolute;
+    left:30px;
+    top:0px;
+    z-index:3;
+    font-size:20px;
+}
+
+#canvasT {
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:2;
+}
+#canvasB {
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:1;
+}
+
+#startbutton {
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:10;
+}
+
+#testbutton {
+    position:absolute;
+    left:0px;
+    top:60px;
+    z-index:10;
+}
