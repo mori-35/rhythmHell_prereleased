@@ -377,12 +377,12 @@ class Note {
     constructor(t1,t2) {
         this.t1 = t1;
         this.t2 = t2;
-    //    this.div = Myfunc.createDiv(130 + 500*(20/mms),100,100);
+        this.div = Myfunc.createDiv(130 + 500*(20/mms),100,100);
 
-     //   this.div1 = Myfunc.createDiv(0,30,0);
-     //   this.canvas1 = Myfunc.createCanvas(60,60,false,0,0,0);
-     //   this.div2 = Myfunc.createDiv(0,-30,0);
-     //   this.canvas2 = Myfunc.createCanvas(60,60,false,0,0,0);
+        this.div1 = Myfunc.createDiv(0,30,0);
+        this.canvas1 = Myfunc.createCanvas(60,60,false,0,0,0);
+        this.div2 = Myfunc.createDiv(0,-30,0);
+        this.canvas2 = Myfunc.createCanvas(60,60,false,0,0,0);
 
      //   (() => {this.init()})();
     }
@@ -429,7 +429,7 @@ class Note {
     }
 
     remove() {
-    //    this.div.remove();
+     //   this.div.remove();
     }
 }
 //==================================================
@@ -484,7 +484,7 @@ function tick() {
     Judge.tick();
 
     //描画処理
-   /////////////////// noteFolder.forEach(function(e) {e.tick()});
+    noteFolder.forEach(function(e) {e.tick()});
 
     //ノーツ設置
     if(sheet[j1].count === i1) {
