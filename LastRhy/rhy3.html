@@ -14,7 +14,10 @@
     <button onclick="testC()">C</button>
     <button onclick="testD()">D</button>
     <button onclick="testE()">E</button>
-
+    <button onclick="testP()">P</button>
+    <button onclick="testQ()">Q</button>
+    <button onclick="testR()">R</button>
+    <button onclick="testT()">T</button>
     <script>
         let result1 = document.getElementById("result1");
         let result2 = document.getElementById("result2");
@@ -22,7 +25,9 @@
         let timerId = "";
         let i = 0;
         let mms = 20;
-
+        let bool = true;
+        let res1 = "";
+        let res2 = "";
         function init() {
             mms = parseInt(prompt("mms"));
         }
@@ -61,6 +66,29 @@
             },mms)
         }
 
+        function testP() {
+            time = Date.now();
+            testQ();
+        }
+
+        function testQ() {
+            i += mms;
+            if(bool){setTimeout(testQ,mms)};
+        }
+
+        function testR() {
+            result1.textContent = Date.now() - time;
+            result2.textContent = i;
+        }
+
+        function testT() {
+            i = 0;
+            time = Date.now();
+            timerId = setInterval(function() {
+                res1 = res1 + (time - Date.now()) + ",";
+                result1.textContent = res1;
+            },mms)
+        }
 
     </script>
 </body>
