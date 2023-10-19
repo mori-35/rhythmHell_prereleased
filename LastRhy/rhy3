@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload = "init()">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <button onclick="testA()">A</button>
+    <button onclick="testB()">B</button>
+    <button onclick="testC()">C</button>
+    <button onclick="testD()">D</button>
+    <button onclick="testE()">E</button>
+
+    <script>
+        let result1 = document.getElementById("result1");
+        let result2 = document.getElementById("result2");
+        let time = "";
+        let timerId = "";
+        let i = 0;
+        let mms = 20;
+
+        function init() {
+            mms = parseInt(prompt("mms"));
+        }
+
+        function testA() {
+            time = Date.now();
+
+        }
+
+        function testB() {
+            result1.textContent = Date.now() - time;
+        }
+
+        function testC() {
+            i = 0;
+            time = Date.now();
+            timerId = setInterval(function() {
+                i += mms;
+            },mms)
+
+        }
+
+        function testD() {
+            clearInterval(timerId);
+            result1.textContent = Date.now() - time;
+            result2.textContent = i;
+        }
+
+        function testE() {
+            i = 0;
+            time = Date.now();
+            timerId = setInterval(function() {
+                let can = document.createElement("canvas");
+                document.body.appendChild(can);
+                i += mms;
+            },mms)
+        }
+
+
+    </script>
+</body>
+</html>
