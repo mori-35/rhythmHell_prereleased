@@ -88,7 +88,10 @@
             i = 0;
             time = Date.now();
             timerId = setInterval(function() {
-                res1 = res1 + (time - Date.now()) + ",";
+                i ++;
+                let tmp = (time - Date.now());
+                res1 = res1 + "[" + tmp +"," + i + "]" + ",";
+
                 result1.textContent = res1;
             },mms)
         }
