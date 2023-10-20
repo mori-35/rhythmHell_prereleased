@@ -20,6 +20,10 @@
     <button onclick="testT()">T</button>
     <button onclick="testU()">U</button>
     <button onclick="testV()">V</button>
+    <br>
+    <button onclick="testW()">W</button>
+    <button onclick="testX()">X</button>
+    <button onclick="testY()">Y</button>
     <script>
         let result1 = document.getElementById("result1");
         let result2 = document.getElementById("result2");
@@ -30,6 +34,7 @@
         let bool = true;
         let res1 = "";
         let res2 = "";
+        let z = "";
         function init() {
             mms = parseInt(prompt("mms"));
         }
@@ -37,6 +42,12 @@
         function testA() {
             time = Date.now();
             result1.textContent = res1;
+
+            clearTimeout(timerId);
+            for(let i = 0; i < z.length; i++) {
+
+
+            }
 
         }
 
@@ -96,6 +107,7 @@
             },mms)
         }
 
+        
         function testU() {
             i = 0;
 
@@ -114,6 +126,60 @@
             },mms)
 
             result1.textContent = res1;
+        }
+
+        function animate() {
+            i ++;
+            let tmp = (time - Date.now());
+            res1 = res1 + "[" + tmp +"," + i + "]" + ",";
+            result1.textContent = res1;
+
+            requestAnimationFrame(animate);
+        }
+
+        function testW() {
+            time = Date.now();
+            requestAnimationFrame(animate);
+
+        }
+
+        function testX() {
+            let start, previousTimeStamp;
+            let done = false;
+
+            function step(timestamp) {
+              if (start === undefined) {
+                start = timestamp;
+              }
+              const elapsed = timestamp - start;
+
+              if (previousTimeStamp !== timestamp) {
+                console.log(elapsed);
+              }
+
+              if (elapsed < 2000) {
+                previousTimeStamp = timestamp;
+                window.requestAnimationFrame(step);
+                
+              }
+            }
+
+            window.requestAnimationFrame(step);
+        }
+
+        function testY() {
+            time = Date.now();
+            timerId = setInterval(() => {
+
+                i ++;
+
+                if(Date.now() - time >= 10000) {
+                    clearInterval(timerId);
+                    result1.textContent = i;
+                }
+
+            },mms)
+            
         }
 
     </script>
